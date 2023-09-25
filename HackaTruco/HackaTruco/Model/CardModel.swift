@@ -8,6 +8,7 @@
 import Foundation
 
 //estruturas das cartas
+//3 > 2 > A > k > J > Q > 7 > 6 > 5 > 4 -> usadas no truco
 
 public enum CardsValue : String, CaseIterable, Codable {
     case ace = "ACE" //as
