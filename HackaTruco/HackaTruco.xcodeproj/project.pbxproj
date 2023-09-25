@@ -12,6 +12,7 @@
 		D1A9D6FA2AC1B00D00A13B0D /* DrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D6F92AC1B00D00A13B0D /* DrawModel.swift */; };
 		D1A9D6FC2AC1B0C800A13B0D /* ShuffleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D6FB2AC1B0C800A13B0D /* ShuffleModel.swift */; };
 		D1A9D6FF2AC1B21800A13B0D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D6FE2AC1B21800A13B0D /* ApiRequest.swift */; };
+		D1A9D7022AC1B8D900A13B0D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D7012AC1B8D900A13B0D /* HomeView.swift */; };
 		D1F1D8F72ABDD7D7002ED8E3 /* HackaTrucoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D8F62ABDD7D7002ED8E3 /* HackaTrucoApp.swift */; };
 		D1F1D8F92ABDD7D7002ED8E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D8F82ABDD7D7002ED8E3 /* ContentView.swift */; };
 		D1F1D8FB2ABDD7D8002ED8E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F1D8FA2ABDD7D8002ED8E3 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		D1A9D6F92AC1B00D00A13B0D /* DrawModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawModel.swift; sourceTree = "<group>"; };
 		D1A9D6FB2AC1B0C800A13B0D /* ShuffleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleModel.swift; sourceTree = "<group>"; };
 		D1A9D6FE2AC1B21800A13B0D /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		D1A9D7012AC1B8D900A13B0D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D1F1D8F32ABDD7D7002ED8E3 /* HackaTruco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackaTruco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F1D8F62ABDD7D7002ED8E3 /* HackaTrucoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackaTrucoApp.swift; sourceTree = "<group>"; };
 		D1F1D8F82ABDD7D7002ED8E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D1A9D7002AC1B7AF00A13B0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D1A9D7012AC1B8D900A13B0D /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D1F1D8EA2ABDD7D7002ED8E3 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 		D1F1D8F52ABDD7D7002ED8E3 /* HackaTruco */ = {
 			isa = PBXGroup;
 			children = (
+				D1A9D7002AC1B7AF00A13B0D /* Views */,
 				D1A9D6FD2AC1B1E400A13B0D /* ViewModel */,
 				D1A9D6F42AC1AE7E00A13B0D /* Model */,
 				D1F1D8F62ABDD7D7002ED8E3 /* HackaTrucoApp.swift */,
@@ -293,6 +304,7 @@
 				D1F1D8F92ABDD7D7002ED8E3 /* ContentView.swift in Sources */,
 				D1A9D6F82AC1AFA500A13B0D /* DeckOfCards.swift in Sources */,
 				D1F1D8F72ABDD7D7002ED8E3 /* HackaTrucoApp.swift in Sources */,
+				D1A9D7022AC1B8D900A13B0D /* HomeView.swift in Sources */,
 				D1A9D6FF2AC1B21800A13B0D /* ApiRequest.swift in Sources */,
 				D1A9D6F62AC1AECD00A13B0D /* CardModel.swift in Sources */,
 			);

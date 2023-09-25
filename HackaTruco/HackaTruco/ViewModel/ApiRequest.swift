@@ -17,12 +17,12 @@ class ApiRequest: ObservableObject {
             
         callJsonApi(url: url, object: ShuffleModel.self) { deckModel in
                 self.reshuffle = deckModel
-                completion(self.reshuffle ?? ShuffleModel(success: false, deckId: "", shuffled: false, remaining: 0))
+                completion(self.reshuffle ?? ShuffleModel(sucess: false, deck_id: "", shuffled: false, remaining: 0))
             }
         }
     
         /**
-         * Faz a chamada API que reembaralha um deck já existente (deve passar o id do deck)
+         * Faz a chamada API que reembaralha um deck já existente (deve passar o id do deck) 
          */
         func getReshuffle(deckId: String, completion: @escaping (ShuffleModel) -> ()) {
             guard let url = URL(string: "https://deckofcardsapi.com/api/deck/\(deckId)/shuffle/") else {
@@ -32,7 +32,7 @@ class ApiRequest: ObservableObject {
             
             callJsonApi(url: url, object: ShuffleModel.self) { deckModel in
                 self.reshuffle = deckModel as ShuffleModel
-                completion(self.reshuffle ?? ShuffleModel(success: false, deckId: "", shuffled: false, remaining: 0))
+                completion(self.reshuffle ?? ShuffleModel(sucess: false, deck_id: "", shuffled: false, remaining: 0))
             }
         }
     
@@ -45,7 +45,7 @@ class ApiRequest: ObservableObject {
             
             callJsonApi(url: url, object: DrawModel.self) { deckModel in
                 self.draw = deckModel
-                completion(self.draw ?? DrawModel(sucess: false, deckId: "", cards: [], remaining: 0))
+                completion(self.draw ?? DrawModel(sucess: false, deck_id: "", cards: [], remaining: 0))
             }
         }
     

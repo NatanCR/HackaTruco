@@ -10,5 +10,5 @@ import Foundation
 //padrao de id e status ao puxar o GET da api 
 protocol DeckOfCards: Codable, Hashable {
     var sucess: Bool { get }
-    var deckId: String { get }
+    var deck_id: String { get }
 }
