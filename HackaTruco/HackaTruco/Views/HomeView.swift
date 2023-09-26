@@ -13,47 +13,32 @@ struct HomeView: View {
     @State var player2 = PlayerModel()
     
     var body: some View {
-        ZStack {
-            Color("bgHomeColor").ignoresSafeArea()
-            Image("bgHome")
-                .resizable()
-                .frame(height: 1000)
-            VStack{
-                Text("HackaTruco")
-                    .foregroundColor(.white)
-                    .font(.system(size: 45, weight: .medium, design: .monospaced))
+        NavigationStack {
+            ZStack {
+                Color("bgHomeColor").ignoresSafeArea()
+                Image("bgHome")
+                    .resizable()
+                    .frame(height: 1000)
+                VStack{
+                    Text("HackaTruco")
+                        .foregroundColor(.white)
+                        .font(.system(size: 45, weight: .medium, design: .monospaced))
+                        .padding()
+                    NavigationLink(destination: GameView(), label: {Image("btnJogar")})
                     .padding()
-                Button {
-                    controllerAPI.getNewDeck { deck in
-                        
+                    Button {
+                        //func
+                    } label: {
+                        Image("btnRegras")
                     }
-                                                            
-                } label: {
-                    Image("btnJogar")
-                }
-                .padding()
-                Button {
-                    //func
-                    controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
-                        player1.handCards = card.cards
+                    .padding()
+                    Button {
+                        //func
+                    } label: {
+                        Image("btnEstatisticas")
                     }
-                    
-                    controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
-                        player2.handCards = card.cards
-                    }
-                    
-                } label: {
-                    Image("btnRegras")
+                    .padding()
                 }
-                .padding()
-                Button {
-                    //func
-                    dump(player1.handCards)
-                    dump(player2.handCards)
-                } label: {
-                    Image("btnEstatisticas")
-                }
-                .padding()
             }
         }
     }
