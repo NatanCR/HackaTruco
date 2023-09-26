@@ -9,38 +9,44 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ZStack {
-            Color("bgHomeColor").ignoresSafeArea()
-            Image("bgHome")
-                .resizable()
-                .frame(height: 1000)
-            VStack{
-                Text("HackaTruco")
-                    .foregroundColor(.white)
-                    .font(.system(size: 45, weight: .medium, design: .monospaced))
+        
+        NavigationView {
+            
+            ZStack {
+                Color("bgHomeColor").ignoresSafeArea()
+                Image("bgHome")
+                    .resizable()
+                    .frame(height: 1000)
+                
+                VStack{
+                    Text("HackaTruco")
+                        .foregroundColor(.white)
+                        .font(.system(size: 45, weight: .medium, design: .monospaced))
+                        .padding()
+                    Button {
+                        //func
+                    } label: {
+                        Image("btnJogar")
+                    }
                     .padding()
-                Button {
-                    //func
-                } label: {
-                    Image("btnJogar")
+                    NavigationLink(destination: RegrasView()) {
+                        Image("btnRegras")
+                    } .padding()
+                    Button {
+                        //func
+                    } label: {
+                        Image("btnEstatisticas")
+                    }
+                    .padding()
                 }
-                .padding()
-                Button {
-                    //func
-                } label: {
-                    Image("btnRegras")
-                }
-                .padding()
-                Button {
-                    //func
-                } label: {
-                    Image("btnEstatisticas")
-                }
-                .padding()
             }
         }
+            
+            .accentColor(.white)
+        
     }
 }
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

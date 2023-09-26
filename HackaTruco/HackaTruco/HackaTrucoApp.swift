@@ -11,7 +11,8 @@ import SwiftUI
 struct HackaTrucoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            HomeView()
+            RetanguloComponente()
         }
     }
 }

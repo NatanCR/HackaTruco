@@ -20,6 +20,12 @@
 		D1F1D9082ABDD7D8002ED8E3 /* HackaTrucoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D9072ABDD7D8002ED8E3 /* HackaTrucoTests.swift */; };
 		D1F1D9122ABDD7D8002ED8E3 /* HackaTrucoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D9112ABDD7D8002ED8E3 /* HackaTrucoUITests.swift */; };
 		D1F1D9142ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D9132ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift */; };
+		D45EE7F72AC1BE6900C3D4AD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7F62AC1BE6900C3D4AD /* GameView.swift */; };
+		D45EE7F92AC1BE7900C3D4AD /* RegrasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7F82AC1BE7900C3D4AD /* RegrasView.swift */; };
+		D45EE7FB2AC1BE8700C3D4AD /* EstatísticasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7FA2AC1BE8700C3D4AD /* EstatísticasView.swift */; };
+		D45EE7FE2AC1BEC500C3D4AD /* RetanguloComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7FD2AC1BEC500C3D4AD /* RetanguloComponente.swift */; };
+		D45EE8002AC1D34500C3D4AD /* RegrasComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7FF2AC1D34500C3D4AD /* RegrasComponente.swift */; };
+		D45EE8022AC1D68A00C3D4AD /* Regras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE8012AC1D68A00C3D4AD /* Regras.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 		D1F1D90D2ABDD7D8002ED8E3 /* HackaTrucoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackaTrucoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F1D9112ABDD7D8002ED8E3 /* HackaTrucoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackaTrucoUITests.swift; sourceTree = "<group>"; };
 		D1F1D9132ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackaTrucoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D45EE7F62AC1BE6900C3D4AD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		D45EE7F82AC1BE7900C3D4AD /* RegrasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegrasView.swift; sourceTree = "<group>"; };
+		D45EE7FA2AC1BE8700C3D4AD /* EstatísticasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EstatísticasView.swift"; sourceTree = "<group>"; };
+		D45EE7FD2AC1BEC500C3D4AD /* RetanguloComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetanguloComponente.swift; sourceTree = "<group>"; };
+		D45EE7FF2AC1D34500C3D4AD /* RegrasComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegrasComponente.swift; sourceTree = "<group>"; };
+		D45EE8012AC1D68A00C3D4AD /* Regras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regras.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +118,10 @@
 			isa = PBXGroup;
 			children = (
 				D1A9D7012AC1B8D900A13B0D /* HomeView.swift */,
+				D45EE7F62AC1BE6900C3D4AD /* GameView.swift */,
+				D45EE7F82AC1BE7900C3D4AD /* RegrasView.swift */,
+				D45EE7FA2AC1BE8700C3D4AD /* EstatísticasView.swift */,
+				D45EE7FC2AC1BE8E00C3D4AD /* Componentes  */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +183,16 @@
 				D1F1D9132ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift */,
 			);
 			path = HackaTrucoUITests;
+			sourceTree = "<group>";
+		};
+		D45EE7FC2AC1BE8E00C3D4AD /* Componentes  */ = {
+			isa = PBXGroup;
+			children = (
+				D45EE7FD2AC1BEC500C3D4AD /* RetanguloComponente.swift */,
+				D45EE7FF2AC1D34500C3D4AD /* RegrasComponente.swift */,
+				D45EE8012AC1D68A00C3D4AD /* Regras.swift */,
+			);
+			path = "Componentes ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,10 +329,16 @@
 				D1A9D6FC2AC1B0C800A13B0D /* ShuffleModel.swift in Sources */,
 				D1F1D8F92ABDD7D7002ED8E3 /* ContentView.swift in Sources */,
 				D1A9D6F82AC1AFA500A13B0D /* DeckOfCards.swift in Sources */,
+				D45EE7F92AC1BE7900C3D4AD /* RegrasView.swift in Sources */,
+				D45EE7FE2AC1BEC500C3D4AD /* RetanguloComponente.swift in Sources */,
+				D45EE7F72AC1BE6900C3D4AD /* GameView.swift in Sources */,
+				D45EE8022AC1D68A00C3D4AD /* Regras.swift in Sources */,
+				D45EE8002AC1D34500C3D4AD /* RegrasComponente.swift in Sources */,
 				D1F1D8F72ABDD7D7002ED8E3 /* HackaTrucoApp.swift in Sources */,
 				D1A9D7022AC1B8D900A13B0D /* HomeView.swift in Sources */,
 				D1A9D6FF2AC1B21800A13B0D /* ApiRequest.swift in Sources */,
 				D1A9D6F62AC1AECD00A13B0D /* CardModel.swift in Sources */,
+				D45EE7FB2AC1BE8700C3D4AD /* EstatísticasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HackaTruco/Preview Content\"";
-				DEVELOPMENT_TEAM = 3SWCGFCJF2;
+				DEVELOPMENT_TEAM = MM9XM3Z7DH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -494,7 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HackaTruco/Preview Content\"";
-				DEVELOPMENT_TEAM = 3SWCGFCJF2;
+				DEVELOPMENT_TEAM = MM9XM3Z7DH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

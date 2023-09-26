@@ -26,7 +26,7 @@ class ApiRequest: ObservableObject {
          */
         func getReshuffle(deckId: String, completion: @escaping (ShuffleModel) -> ()) {
             guard let url = URL(string: "https://deckofcardsapi.com/api/deck/\(deckId)/shuffle/") else {
-                print("nao deu derto")
+                print("nao deu certo")
                 return
             }
             
