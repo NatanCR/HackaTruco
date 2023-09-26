@@ -16,7 +16,7 @@ struct GameView: View {
             } label: {
                 Text("Set Cards")
             }
-
+            
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .foregroundColor(.white)
@@ -33,8 +33,3 @@ struct GameView: View {
     }
 }
 
-struct GameView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameView()
-    }
-}
