@@ -88,10 +88,7 @@
 		D1A9D6F42AC1AE7E00A13B0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D1A9D6F52AC1AECD00A13B0D /* CardModel.swift */,
-				D1A9D6F72AC1AFA500A13B0D /* DeckOfCards.swift */,
-				D1A9D6F92AC1B00D00A13B0D /* DrawModel.swift */,
-				D1A9D6FB2AC1B0C800A13B0D /* ShuffleModel.swift */,
+				D1A9D7062AC2FF3100A13B0D /* API */,
 				D1A9D7042AC2FD3D00A13B0D /* PlayerModel.swift */,
 			);
 			path = Model;
@@ -119,6 +116,17 @@
 			children = (
 			);
 			path = GameFlow;
+			sourceTree = "<group>";
+		};
+		D1A9D7062AC2FF3100A13B0D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D1A9D6F52AC1AECD00A13B0D /* CardModel.swift */,
+				D1A9D6F72AC1AFA500A13B0D /* DeckOfCards.swift */,
+				D1A9D6F92AC1B00D00A13B0D /* DrawModel.swift */,
+				D1A9D6FB2AC1B0C800A13B0D /* ShuffleModel.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		D1F1D8EA2ABDD7D7002ED8E3 = {
