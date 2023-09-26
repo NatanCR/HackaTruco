@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var controllerAPI = ApiRequest()
+    @State var player1 = PlayerModel()
+    @State var player2 = PlayerModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {
