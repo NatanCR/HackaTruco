@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var controllerAPI = ApiRequest()
+    @State var player1 = PlayerModel()
+    @State var player2 = PlayerModel()
+    
     var body: some View {
         ZStack {
             Color("bgHomeColor").ignoresSafeArea()
@@ -20,19 +24,32 @@ struct HomeView: View {
                     .font(.system(size: 45, weight: .medium, design: .monospaced))
                     .padding()
                 Button {
-                    //func
+                    controllerAPI.getNewDeck { deck in
+                        
+                    }
+                                                            
                 } label: {
                     Image("btnJogar")
                 }
                 .padding()
                 Button {
                     //func
+                    controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
+                        player1.handCards = card.cards
+                    }
+                    
+                    controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
+                        player2.handCards = card.cards
+                    }
+                    
                 } label: {
                     Image("btnRegras")
                 }
                 .padding()
                 Button {
                     //func
+                    dump(player1.handCards)
+                    dump(player2.handCards)
                 } label: {
                     Image("btnEstatisticas")
                 }

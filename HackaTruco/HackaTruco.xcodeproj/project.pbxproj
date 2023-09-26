@@ -15,6 +15,7 @@
 		D1A9D7022AC1B8D900A13B0D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D7012AC1B8D900A13B0D /* HomeView.swift */; };
 		D1A9D7052AC2FD3D00A13B0D /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D7042AC2FD3D00A13B0D /* PlayerModel.swift */; };
 		D1A9D7082AC3017A00A13B0D /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D7072AC3017A00A13B0D /* PlayerManager.swift */; };
+		D1A9D70A2AC30C6000A13B0D /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D7092AC30C6000A13B0D /* GameManager.swift */; };
 		D1F1D8F72ABDD7D7002ED8E3 /* HackaTrucoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D8F62ABDD7D7002ED8E3 /* HackaTrucoApp.swift */; };
 		D1F1D8F92ABDD7D7002ED8E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D8F82ABDD7D7002ED8E3 /* ContentView.swift */; };
 		D1F1D8FB2ABDD7D8002ED8E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F1D8FA2ABDD7D8002ED8E3 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		D1A9D7012AC1B8D900A13B0D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D1A9D7042AC2FD3D00A13B0D /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		D1A9D7072AC3017A00A13B0D /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
+		D1A9D7092AC30C6000A13B0D /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		D1F1D8F32ABDD7D7002ED8E3 /* HackaTruco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackaTruco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F1D8F62ABDD7D7002ED8E3 /* HackaTrucoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackaTrucoApp.swift; sourceTree = "<group>"; };
 		D1F1D8F82ABDD7D7002ED8E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				D1A9D7072AC3017A00A13B0D /* PlayerManager.swift */,
+				D1A9D7092AC30C6000A13B0D /* GameManager.swift */,
 			);
 			path = GameFlow;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				D1A9D7082AC3017A00A13B0D /* PlayerManager.swift in Sources */,
 				D1A9D6FA2AC1B00D00A13B0D /* DrawModel.swift in Sources */,
 				D1A9D6FC2AC1B0C800A13B0D /* ShuffleModel.swift in Sources */,
+				D1A9D70A2AC30C6000A13B0D /* GameManager.swift in Sources */,
 				D1F1D8F92ABDD7D7002ED8E3 /* ContentView.swift in Sources */,
 				D1A9D7052AC2FD3D00A13B0D /* PlayerModel.swift in Sources */,
 				D1A9D6F82AC1AFA500A13B0D /* DeckOfCards.swift in Sources */,

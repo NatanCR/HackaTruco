@@ -66,3 +66,8 @@ public struct CardModel : Codable, Hashable {
     var value: String
     var suit: String
 }
+
+public struct Card {
+    var value: Int //numero ou letra
+    var suit: String //naipe
+}

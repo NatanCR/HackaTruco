@@ -9,7 +9,7 @@ import Foundation
 
 //recebe o deck completo de cartas da api 
 struct DrawModel: DeckOfCards {
-    var sucess: Bool
+    var success: Bool
     var deck_id: String
     var cards: [CardModel]
     var remaining: Int
