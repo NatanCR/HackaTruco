@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88B2CB4A2AC30D8200E1EBD3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2CB492AC30D8200E1EBD3 /* GameView.swift */; };
+		88B2CB4D2AC3174800E1EBD3 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2CB4C2AC3174800E1EBD3 /* ScoreView.swift */; };
 		D1A9D6F62AC1AECD00A13B0D /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D6F52AC1AECD00A13B0D /* CardModel.swift */; };
 		D1A9D6F82AC1AFA500A13B0D /* DeckOfCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D6F72AC1AFA500A13B0D /* DeckOfCards.swift */; };
 		D1A9D6FA2AC1B00D00A13B0D /* DrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D6F92AC1B00D00A13B0D /* DrawModel.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88B2CB492AC30D8200E1EBD3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		88B2CB4C2AC3174800E1EBD3 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		D1A9D6F52AC1AECD00A13B0D /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		D1A9D6F72AC1AFA500A13B0D /* DeckOfCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCards.swift; sourceTree = "<group>"; };
 		D1A9D6F92AC1B00D00A13B0D /* DrawModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawModel.swift; sourceTree = "<group>"; };
@@ -83,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88B2CB4B2AC3172500E1EBD3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				88B2CB4C2AC3174800E1EBD3 /* ScoreView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D1A9D6F42AC1AE7E00A13B0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				D1A9D7012AC1B8D900A13B0D /* HomeView.swift */,
+				88B2CB492AC30D8200E1EBD3 /* GameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +146,7 @@
 		D1F1D8F52ABDD7D7002ED8E3 /* HackaTruco */ = {
 			isa = PBXGroup;
 			children = (
+				88B2CB4B2AC3172500E1EBD3 /* Components */,
 				D1A9D7002AC1B7AF00A13B0D /* Views */,
 				D1A9D6FD2AC1B1E400A13B0D /* ViewModel */,
 				D1A9D6F42AC1AE7E00A13B0D /* Model */,
@@ -303,10 +317,12 @@
 				D1A9D6FC2AC1B0C800A13B0D /* ShuffleModel.swift in Sources */,
 				D1F1D8F92ABDD7D7002ED8E3 /* ContentView.swift in Sources */,
 				D1A9D6F82AC1AFA500A13B0D /* DeckOfCards.swift in Sources */,
+				88B2CB4A2AC30D8200E1EBD3 /* GameView.swift in Sources */,
 				D1F1D8F72ABDD7D7002ED8E3 /* HackaTrucoApp.swift in Sources */,
 				D1A9D7022AC1B8D900A13B0D /* HomeView.swift in Sources */,
 				D1A9D6FF2AC1B21800A13B0D /* ApiRequest.swift in Sources */,
 				D1A9D6F62AC1AECD00A13B0D /* CardModel.swift in Sources */,
+				88B2CB4D2AC3174800E1EBD3 /* ScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

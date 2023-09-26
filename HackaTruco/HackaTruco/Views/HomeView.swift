@@ -9,34 +9,32 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ZStack {
-            Color("bgHomeColor").ignoresSafeArea()
-            Image("bgHome")
-                .resizable()
-                .frame(height: 1000)
-            VStack{
-                Text("HackaTruco")
-                    .foregroundColor(.white)
-                    .font(.system(size: 45, weight: .medium, design: .monospaced))
+        NavigationStack {
+            ZStack {
+                Color("bgHomeColor").ignoresSafeArea()
+                Image("bgHome")
+                    .resizable()
+                    .frame(height: 1000)
+                VStack{
+                    Text("HackaTruco")
+                        .foregroundColor(.white)
+                        .font(.system(size: 45, weight: .medium, design: .monospaced))
+                        .padding()
+                    NavigationLink(destination: GameView(), label: {Image("btnJogar")})
                     .padding()
-                Button {
-                    //func
-                } label: {
-                    Image("btnJogar")
+                    Button {
+                        //func
+                    } label: {
+                        Image("btnRegras")
+                    }
+                    .padding()
+                    Button {
+                        //func
+                    } label: {
+                        Image("btnEstatisticas")
+                    }
+                    .padding()
                 }
-                .padding()
-                Button {
-                    //func
-                } label: {
-                    Image("btnRegras")
-                }
-                .padding()
-                Button {
-                    //func
-                } label: {
-                    Image("btnEstatisticas")
-                }
-                .padding()
             }
         }
     }
