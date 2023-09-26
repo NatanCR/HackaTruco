@@ -1,10 +1,3 @@
-//
-//  GameView.swift
-//  HackaTruco
-//
-//  Created by Bruno Lafayette on 26/09/23.
-//
-
 import SwiftUI
 
 struct GameView: View {
@@ -38,5 +31,10 @@ struct GameView: View {
             }
         }
     }
-    
+}
+
+struct GameView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameView()
+    }
 }

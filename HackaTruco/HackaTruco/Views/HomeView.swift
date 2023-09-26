@@ -23,13 +23,10 @@ struct HomeView: View {
                         .font(.system(size: 45, weight: .medium, design: .monospaced))
                         .padding()
                     NavigationLink(destination: GameView(controllerAPI: controllerAPI), label: {Image("btnJogar")})
-                    .padding()
-                    Button {
-                        //func
-                    } label: {
+                        .padding()
+                    NavigationLink(destination: RegrasView()) {
                         Image("btnRegras")
-                    }
-                    .padding()
+                    } .padding()
                     Button {
                         //func
                     } label: {
@@ -47,6 +44,7 @@ struct HomeView: View {
                 }
             }
         }
+        .accentColor(.black)
     }
 }
 
