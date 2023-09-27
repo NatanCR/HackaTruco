@@ -9,39 +9,40 @@ import SwiftUI
 
 struct CardComponent: View{
     
-    var imageCard: [Image]
-    var isPlayer: Bool
-    init(imageCard: [Image], isPlayer: Bool) {
-        self.imageCard = imageCard
+    @Binding private var imageCard: PlayerModel
+    private var isPlayer: Bool
+    
+    init(imageCard: Binding<PlayerModel>, isPlayer: Bool) {
+        self._imageCard = imageCard
         self.isPlayer = isPlayer
     }
     
     var body: some View {
-         
         HStack{
-            
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                imageCard[0]
-            })
-            
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                imageCard[0]
-            })
-            
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                imageCard[0]
-            })
+            Spacer()
+            ForEach(Array(imageCard.handCards.enumerated()), id: \.offset) {index, card in
+                Button(action: { addCurrentCard(index, card: card) }, label: {
+                    if isPlayer{ ImageCardComponent(url: card.image) }
+                    else { Image(uiImage: UIImage(named: "card")!).resizable().frame(maxWidth: 60,maxHeight: 90) }
+                }).disabled(!isPlayer)
+
+            }
+            Spacer()
             
         }.padding()
-        
+    }
+    
+    private func addCurrentCard(_ index: Int, card: CardModel){
+        imageCard.currentCard = card
+        imageCard.handCards.remove(at: index)
     }
     
     
 }
 
-struct CardComponent_preview: PreviewProvider {
-    static var previews: some View {
-        CardComponent(imageCard: [Image(uiImage: UIImage(named: "card")!)], isPlayer: false)
-    }
-}
-
+//struct CardComponent_preview: PreviewProvider {
+//    static var previews: some View {
+//        CardComponent(imageCard: PlayerModel(), isPlayer: false)
+//    }
+//}
+//
