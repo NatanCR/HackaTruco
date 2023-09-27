@@ -24,7 +24,7 @@ struct RegrasComponente: View {
                 Text(titulo).bold()
                     .font(.system(size: 20))
 //                    .foregroundColor(.white)
-                    .padding()
+                    .padding(.horizontal, 15)
             }
             .foregroundColor(.black)
                 .frame(minWidth: 300)

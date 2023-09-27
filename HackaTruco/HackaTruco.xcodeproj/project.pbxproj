@@ -25,12 +25,12 @@
 		D1F1D9082ABDD7D8002ED8E3 /* HackaTrucoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D9072ABDD7D8002ED8E3 /* HackaTrucoTests.swift */; };
 		D1F1D9122ABDD7D8002ED8E3 /* HackaTrucoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D9112ABDD7D8002ED8E3 /* HackaTrucoUITests.swift */; };
 		D1F1D9142ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D9132ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift */; };
-		D45EE7F72AC1BE6900C3D4AD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7F62AC1BE6900C3D4AD /* GameView.swift */; };
 		D45EE7F92AC1BE7900C3D4AD /* RegrasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7F82AC1BE7900C3D4AD /* RegrasView.swift */; };
 		D45EE7FB2AC1BE8700C3D4AD /* EstatísticasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7FA2AC1BE8700C3D4AD /* EstatísticasView.swift */; };
 		D45EE7FE2AC1BEC500C3D4AD /* RetanguloComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7FD2AC1BEC500C3D4AD /* RetanguloComponente.swift */; };
 		D45EE8002AC1D34500C3D4AD /* RegrasComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7FF2AC1D34500C3D4AD /* RegrasComponente.swift */; };
 		D45EE8022AC1D68A00C3D4AD /* Regras.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE8012AC1D68A00C3D4AD /* Regras.swift */; };
+		D45EE8042AC3DC0C00C3D4AD /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE8032AC3DC0C00C3D4AD /* GameStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,12 +72,12 @@
 		D1F1D90D2ABDD7D8002ED8E3 /* HackaTrucoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackaTrucoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F1D9112ABDD7D8002ED8E3 /* HackaTrucoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackaTrucoUITests.swift; sourceTree = "<group>"; };
 		D1F1D9132ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackaTrucoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D45EE7F62AC1BE6900C3D4AD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D45EE7F82AC1BE7900C3D4AD /* RegrasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegrasView.swift; sourceTree = "<group>"; };
 		D45EE7FA2AC1BE8700C3D4AD /* EstatísticasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EstatísticasView.swift"; sourceTree = "<group>"; };
 		D45EE7FD2AC1BEC500C3D4AD /* RetanguloComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetanguloComponente.swift; sourceTree = "<group>"; };
 		D45EE7FF2AC1D34500C3D4AD /* RegrasComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegrasComponente.swift; sourceTree = "<group>"; };
 		D45EE8012AC1D68A00C3D4AD /* Regras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regras.swift; sourceTree = "<group>"; };
+		D45EE8032AC3DC0C00C3D4AD /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +125,7 @@
 		D1A9D6FD2AC1B1E400A13B0D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D45EE8032AC3DC0C00C3D4AD /* GameStatus.swift */,
 				D1A9D7032AC1C2D600A13B0D /* GameFlow */,
 				D1A9D6FE2AC1B21800A13B0D /* ApiRequest.swift */,
 			);
@@ -364,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1A9D7082AC3017A00A13B0D /* PlayerManager.swift in Sources */,
+				D45EE8042AC3DC0C00C3D4AD /* GameStatus.swift in Sources */,
 				D1A9D6FA2AC1B00D00A13B0D /* DrawModel.swift in Sources */,
 				D1A9D6FC2AC1B0C800A13B0D /* ShuffleModel.swift in Sources */,
 				D1A9D70A2AC30C6000A13B0D /* GameManager.swift in Sources */,
