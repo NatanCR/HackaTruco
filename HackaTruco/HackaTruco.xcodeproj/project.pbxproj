@@ -18,6 +18,8 @@
 		D1A9D7052AC2FD3D00A13B0D /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D7042AC2FD3D00A13B0D /* PlayerModel.swift */; };
 		D1A9D7082AC3017A00A13B0D /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D7072AC3017A00A13B0D /* PlayerManager.swift */; };
 		D1A9D70A2AC30C6000A13B0D /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D7092AC30C6000A13B0D /* GameManager.swift */; };
+		D1A9D70C2AC4532B00A13B0D /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D70B2AC4532B00A13B0D /* TableModel.swift */; };
+		D1A9D70E2AC4546C00A13B0D /* TableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9D70D2AC4546C00A13B0D /* TableManager.swift */; };
 		D1F1D8F72ABDD7D7002ED8E3 /* HackaTrucoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D8F62ABDD7D7002ED8E3 /* HackaTrucoApp.swift */; };
 		D1F1D8F92ABDD7D7002ED8E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D8F82ABDD7D7002ED8E3 /* ContentView.swift */; };
 		D1F1D8FB2ABDD7D8002ED8E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F1D8FA2ABDD7D8002ED8E3 /* Assets.xcassets */; };
@@ -25,7 +27,6 @@
 		D1F1D9082ABDD7D8002ED8E3 /* HackaTrucoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D9072ABDD7D8002ED8E3 /* HackaTrucoTests.swift */; };
 		D1F1D9122ABDD7D8002ED8E3 /* HackaTrucoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D9112ABDD7D8002ED8E3 /* HackaTrucoUITests.swift */; };
 		D1F1D9142ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F1D9132ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift */; };
-		D45EE7F72AC1BE6900C3D4AD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7F62AC1BE6900C3D4AD /* GameView.swift */; };
 		D45EE7F92AC1BE7900C3D4AD /* RegrasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7F82AC1BE7900C3D4AD /* RegrasView.swift */; };
 		D45EE7FB2AC1BE8700C3D4AD /* EstatísticasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7FA2AC1BE8700C3D4AD /* EstatísticasView.swift */; };
 		D45EE7FE2AC1BEC500C3D4AD /* RetanguloComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45EE7FD2AC1BEC500C3D4AD /* RetanguloComponente.swift */; };
@@ -62,6 +63,8 @@
 		D1A9D7042AC2FD3D00A13B0D /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		D1A9D7072AC3017A00A13B0D /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		D1A9D7092AC30C6000A13B0D /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		D1A9D70B2AC4532B00A13B0D /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
+		D1A9D70D2AC4546C00A13B0D /* TableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableManager.swift; sourceTree = "<group>"; };
 		D1F1D8F32ABDD7D7002ED8E3 /* HackaTruco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackaTruco.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F1D8F62ABDD7D7002ED8E3 /* HackaTrucoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackaTrucoApp.swift; sourceTree = "<group>"; };
 		D1F1D8F82ABDD7D7002ED8E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,7 +75,6 @@
 		D1F1D90D2ABDD7D8002ED8E3 /* HackaTrucoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackaTrucoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1F1D9112ABDD7D8002ED8E3 /* HackaTrucoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackaTrucoUITests.swift; sourceTree = "<group>"; };
 		D1F1D9132ABDD7D8002ED8E3 /* HackaTrucoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackaTrucoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D45EE7F62AC1BE6900C3D4AD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D45EE7F82AC1BE7900C3D4AD /* RegrasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegrasView.swift; sourceTree = "<group>"; };
 		D45EE7FA2AC1BE8700C3D4AD /* EstatísticasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EstatísticasView.swift"; sourceTree = "<group>"; };
 		D45EE7FD2AC1BEC500C3D4AD /* RetanguloComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetanguloComponente.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				D1A9D7062AC2FF3100A13B0D /* API */,
 				D1A9D7042AC2FD3D00A13B0D /* PlayerModel.swift */,
+				D1A9D70B2AC4532B00A13B0D /* TableModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 		D1A9D7032AC1C2D600A13B0D /* GameFlow */ = {
 			isa = PBXGroup;
 			children = (
+				D1A9D70D2AC4546C00A13B0D /* TableManager.swift */,
 				D1A9D7072AC3017A00A13B0D /* PlayerManager.swift */,
 				D1A9D7092AC30C6000A13B0D /* GameManager.swift */,
 			);
@@ -363,11 +367,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1A9D70E2AC4546C00A13B0D /* TableManager.swift in Sources */,
 				D1A9D7082AC3017A00A13B0D /* PlayerManager.swift in Sources */,
 				D1A9D6FA2AC1B00D00A13B0D /* DrawModel.swift in Sources */,
 				D1A9D6FC2AC1B0C800A13B0D /* ShuffleModel.swift in Sources */,
 				D1A9D70A2AC30C6000A13B0D /* GameManager.swift in Sources */,
 				D1F1D8F92ABDD7D7002ED8E3 /* ContentView.swift in Sources */,
+				D1A9D70C2AC4532B00A13B0D /* TableModel.swift in Sources */,
 				D1A9D7052AC2FD3D00A13B0D /* PlayerModel.swift in Sources */,
 				D1A9D6F82AC1AFA500A13B0D /* DeckOfCards.swift in Sources */,
 				88B2CB4A2AC30D8200E1EBD3 /* GameView.swift in Sources */,
