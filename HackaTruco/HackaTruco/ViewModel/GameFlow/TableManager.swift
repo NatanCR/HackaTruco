@@ -14,6 +14,9 @@ class TableManager {
         return [Card(value: manilhaValue, suit: card.suit)]
     }
     
+    
+    
+    
     /**Função que recebe os jogadores e a manilha, calcula quem venceu a rodada e devolve o vencedor, se empatar retorna nil**/
     public static func compareCardsOnTable(player1: PlayerModel, player2: PlayerModel, manilha: TableModel) -> PlayerModel? {
         var sumPlayer1: Int

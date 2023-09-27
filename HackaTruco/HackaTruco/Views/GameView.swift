@@ -9,7 +9,7 @@ struct GameView: View {
     
     var body: some View{
         VStack(content: {
-            ScoreView(scorePlayer: 10, scoreCPU: 12, round: 2)
+            ScoreView(scorePlayer: 5, scoreCPU: 10, round: 3)
             CardComponent(imageCard: [Image(uiImage: UIImage(named: "card")!)], isPlayer: false)
             HStack(spacing: -80){
                 AsyncImage(
