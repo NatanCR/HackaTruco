@@ -17,7 +17,7 @@ class ApiRequest: ObservableObject {
             
         callJsonApi(url: url, object: ShuffleModel.self) { deckModel in
                 self.reshuffle = deckModel
-                completion(self.reshuffle ?? ShuffleModel(sucess: false, deck_id: "", shuffled: false, remaining: 0))
+                completion(self.reshuffle ?? ShuffleModel(success: false, deck_id: "bad", shuffled: false, remaining: 0))
             }
         }
     
@@ -26,13 +26,13 @@ class ApiRequest: ObservableObject {
          */
         func getReshuffle(deckId: String, completion: @escaping (ShuffleModel) -> ()) {
             guard let url = URL(string: "https://deckofcardsapi.com/api/deck/\(deckId)/shuffle/") else {
-                print("nao deu derto")
+                print("NAO DEU CERTO")
                 return
             }
             
             callJsonApi(url: url, object: ShuffleModel.self) { deckModel in
                 self.reshuffle = deckModel as ShuffleModel
-                completion(self.reshuffle ?? ShuffleModel(sucess: false, deck_id: "", shuffled: false, remaining: 0))
+                completion(self.reshuffle ?? ShuffleModel(success: false, deck_id: "", shuffled: false, remaining: 0))
             }
         }
     
@@ -45,7 +45,7 @@ class ApiRequest: ObservableObject {
             
             callJsonApi(url: url, object: DrawModel.self) { deckModel in
                 self.draw = deckModel
-                completion(self.draw ?? DrawModel(sucess: false, deck_id: "", cards: [], remaining: 0))
+                completion(self.draw ?? DrawModel(success: false, deck_id: "", cards: [], remaining: 0))
             }
         }
     
