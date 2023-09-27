@@ -7,10 +7,12 @@
 
 import Foundation
 
-class GameManager{
+class GameManager {
     
-//    public static func defineRoundWinner(player1: PlayerModel, player2: PlayerModel, manilha: TableModel) -> PlayerModel?{
-//        guard let roundWinner = TableManager.compareCardsOnTable(player1: player1, player2: player2, manilha: manilha) else {return nil}
-//        
-//    }
+    public static func identifyManilha(card: CardModel) -> [Card] {
+        let manilhaValue = CardsValue.init(rawValue: card.value)!.weight + 1
+        return [Card(value: manilhaValue, suit: card.suit)]
+    }
+    
+    
 }

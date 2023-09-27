@@ -11,14 +11,12 @@ struct GameView: View {
     
     var body: some View{
         VStack(content: {
-
             ScoreView(scorePlayer: 10, scoreCPU: 12, round: 2)
             CardComponent(imageCard: $player2, isPlayer: false)
             Spacer()
             HStack(spacing: -50){
                 ImageCardComponent(url: shackle?.image ?? String())
                 Image(uiImage: UIImage(named: "card") ?? .strokedCheckmark).resizable().frame(maxWidth: 72,maxHeight: 100)
-
             }
             Spacer()
             CardComponent(imageCard: $player1, isPlayer: true)
