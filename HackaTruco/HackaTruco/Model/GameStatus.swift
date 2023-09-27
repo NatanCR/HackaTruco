@@ -44,12 +44,18 @@ class GameStatus: ObservableObject {
     func testGameStatus() {
         
         let status = GameStatus()
-        
         status.matchesStarted += 1
         status.defeats += 1
+        status.winSequence += 1
+        status.matchesWon += 2
+        
+        
         
         print("Partidas iniciads: \(status.matchesStarted)")
+        print("Derrotas: \(status.defeats)")
+        print("Sequência de vitórias: \(status.winSequence)")
+        print("Vitórias totais: \(status.matchesWon)")
     }
     
-
+    
 }

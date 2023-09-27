@@ -39,10 +39,12 @@ struct HomeView: View {
         
         .onAppear {
             print("ON APPEAR")
+            vm.testGameStatus()
+            
             controllerAPI.getNewDeck { deck in
                 if !deck.success {
                     print("request not succeded")
-                    vm.testGameStatus()
+                    
                 }
             }
         }
