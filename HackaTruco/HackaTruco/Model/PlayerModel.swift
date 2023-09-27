@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PlayerModel {
+struct PlayerModel: Hashable {
     var id = UUID()
     var name: String
     var roundScore: Int
