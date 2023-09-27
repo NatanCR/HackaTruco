@@ -1,4 +1,3 @@
-//
 //  HomeView.swift
 //  HackaTruco
 //
@@ -9,6 +8,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var controllerAPI = ApiRequest()
+    @ObservedObject var vm: GameStatus = GameStatus()
     
     var body: some View {
         NavigationStack {
@@ -27,24 +27,26 @@ struct HomeView: View {
                     NavigationLink(destination: RegrasView()) {
                         Image("btnRegras")
                     } .padding()
-                    Button {
-                        //func
-                    } label: {
+                    NavigationLink(destination: EstatisticasView(), label: {
                         Image("btnEstatisticas")
-                    }
+                    })
                     .padding()
                 }
+                
             }
+            
         }
+        
         .onAppear {
             print("ON APPEAR")
             controllerAPI.getNewDeck { deck in
                 if !deck.success {
                     print("request not succeded")
+                    vm.testGameStatus()
                 }
             }
         }
-        .accentColor(.black)
+        .accentColor(.white)
     }
 }
 
@@ -53,3 +55,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+

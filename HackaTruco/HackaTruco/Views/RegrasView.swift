@@ -9,11 +9,10 @@ import SwiftUI
 
 struct RegrasView: View {
     
-    let navTitle = "Regras do truco"
+    let navTitle = "Regras"
     
     var body: some View {
-        
-//        NavigationView {
+    
             ScrollView {
                 
                 VStack {
@@ -23,13 +22,12 @@ struct RegrasView: View {
                     }
                     
                 }
+                .navigationBarTitle(navTitle, displayMode: .inline)
+                .toolbarBackground(Color("bgHomeColor"), for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .ignoresSafeArea()
+                .padding()
             }
-            .navigationBarTitle(navTitle, displayMode: .inline)
-            
-            .ignoresSafeArea()
-            .padding()
-
-
     }
 }
 
