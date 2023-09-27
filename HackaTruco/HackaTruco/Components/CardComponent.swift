@@ -11,17 +11,19 @@ struct CardComponent: View{
     
     @Binding private var imageCard: PlayerModel
     private var isPlayer: Bool
+    @Binding private var turn: Bool
     
-    init(imageCard: Binding<PlayerModel>, isPlayer: Bool) {
+    init(imageCard: Binding<PlayerModel>, isPlayer: Bool, turn: Binding<Bool>) {
         self._imageCard = imageCard
         self.isPlayer = isPlayer
+        self._turn = turn
     }
     
     var body: some View {
         HStack{
             Spacer()
             ForEach(Array(imageCard.handCards.enumerated()), id: \.offset) {index, card in
-                Button(action: { addCurrentCard(index, card: card) }, label: {
+                Button(action: { addCurrentCard(index, card: card); self.turn = !turn }, label: {
                     if isPlayer{ ImageCardComponent(url: card.image) }
                     else { Image(uiImage: UIImage(named: "card")!).resizable().frame(maxWidth: 60,maxHeight: 90) }
                 }).disabled(!isPlayer)
