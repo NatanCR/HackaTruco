@@ -7,14 +7,31 @@
 
 import SwiftUI
 
-struct Estati_sticasView: View {
+struct EstatisticasView: View {
+    
+    @ObservedObject var status: GameStatus = GameStatus()
+    
+    @State private var matchesStarted: Int = 0
+    @State private var matchesWon: Int = 0
+    @State private var defeats: Int = 0
+    @State private var winSequence: Int = 0
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack {
+            RetanguloComponente(imgName: "flag.2.crossed.fill", description: "Partidas iniciadas", num: matchesStarted)
+            RetanguloComponente(imgName: "trophy.fill", description: "Partidas vencidas", num: matchesWon)
+            RetanguloComponente(imgName: "xmark", description: "        Derrotas             ", num: defeats)
+            RetanguloComponente(imgName: "medal.fill", description: "Sequência vitórias", num: winSequence)
+            Spacer()
+        }.navigationBarTitle("Estatísticas", displayMode: .inline)
+            .toolbarBackground(Color("bgHomeColor"), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
     }
 }
 
-struct Estati_sticasView_Previews: PreviewProvider {
+struct EstatisticasView_Previews: PreviewProvider {
     static var previews: some View {
-        Estati_sticasView()
+        EstatisticasView()
     }
 }

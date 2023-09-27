@@ -24,6 +24,7 @@ class PlayerManager {
         return cardsUrl
     }
     
+    //Funções do bot
     
     
 }

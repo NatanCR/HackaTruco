@@ -9,43 +9,44 @@ import SwiftUI
 
 struct RetanguloComponente: View {
     
+    var imgName: String
+    var description: String
+    var num: Int
+ 
     var body: some View {
         
-//        GeometryReader { geo in
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(Color("bgHomeColor"))
-                .frame(maxWidth: 350, maxHeight: 120)
+//                .foregroundColor(Color("bgHomeColor"))
+                .stroke(Color("red"), lineWidth: 2)
+                .frame(maxWidth: 350, maxHeight: 100)
                 .overlay {
                     
                     HStack(alignment: .center, spacing: 15) {
 
                             VStack {
-                                Image(systemName: "sos.circle.fill")
+                                Image(systemName: imgName)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 30, height: 30)
                                     .padding()
                                 
-                                Text("Partidas iniciadas")
+                                Text(description)
                                     .font(.system(size: 25))
                                
                             }
-                            Text("3")
+                            Text("\(num)")
                                 .font(.system(size: 40))
                                 .padding(.leading)
  
                         }
 
                     
-                }
-//        }
- 
-        
+                }.padding()
     }
 }
 
 struct RetanguloComponente_Previews: PreviewProvider {
     static var previews: some View {
-        RetanguloComponente()
+        RetanguloComponente(imgName: "pencil", description: "Partidas vencidas", num: 3)
     }
 }
