@@ -15,14 +15,19 @@ struct EstatisticasView: View {
         
         VStack {
             RetanguloComponente(imgName: "flag.2.crossed.fill", description: "Partidas iniciadas", num: status.matchesStarted)
-            RetanguloComponente(imgName: "trophy.fill", description: "Partidas vencidas", num: status.matchesWon)
+            RetanguloComponente(imgName: "trophy.fill", description: "   Vitórias        ", num: status.matchesWon)
             RetanguloComponente(imgName: "xmark", description: "        Derrotas             ", num: status.defeats)
             RetanguloComponente(imgName: "medal.fill", description: "Sequência vitórias", num: status.winSequence)
             Spacer()
         }.navigationBarTitle("Estatísticas", displayMode: .inline)
             .toolbarBackground(Color("bgHomeColor"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+        
+            .onAppear {
+                status.testGameStatus()
+        }
     }
+       
 }
 
 struct EstatisticasView_Previews: PreviewProvider {

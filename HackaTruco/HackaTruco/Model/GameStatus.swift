@@ -45,9 +45,9 @@ class GameStatus: ObservableObject {
         
         let status = GameStatus()
         status.matchesStarted += 1
-        status.defeats += 1
-        status.winSequence += 1
-        status.matchesWon += 2
+        status.defeats = 0
+        status.winSequence = 0
+        status.matchesWon = 0
         
         
         
