@@ -16,9 +16,8 @@ struct RetanguloComponente: View {
     var body: some View {
         
             RoundedRectangle(cornerRadius: 15)
-//                .foregroundColor(Color("bgHomeColor"))
-                .stroke(Color("red"), lineWidth: 2)
-                .frame(maxWidth: 350, maxHeight: 100)
+                .foregroundColor(Color("bgHomeColor"))
+                .frame(maxWidth: 350, maxHeight: 200)
                 .overlay {
                     
                     HStack(alignment: .center, spacing: 15) {
@@ -27,21 +26,28 @@ struct RetanguloComponente: View {
                                 Image(systemName: imgName)
                                     .resizable()
                                     .scaledToFill()
+                                    .foregroundColor(.white)
                                     .frame(width: 30, height: 30)
                                     .padding()
                                 
                                 Text(description)
-                                    .font(.system(size: 25))
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity)
                                
                             }
+                        Divider()
+                            .overlay(.white)
+                        
                             Text("\(num)")
                                 .font(.system(size: 40))
+                                .foregroundColor(.white).bold()
                                 .padding(.leading)
  
-                        }
-
+                    }.padding(.horizontal)
                     
-                }.padding()
+                }
+                .padding(8)
     }
 }
 

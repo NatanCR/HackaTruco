@@ -10,7 +10,7 @@ import Foundation
 class CounterViewModel{
     static let shared = CounterViewModel()
     
-    func roundWinner(player: PlayerModel) -> Int{
+    func roundWinner(player: PlayerModel) -> Int {
         return 1
     }
     

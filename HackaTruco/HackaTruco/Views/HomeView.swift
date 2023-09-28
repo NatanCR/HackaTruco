@@ -8,7 +8,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var controllerAPI = ApiRequest()
-    @ObservedObject var vm: GameStatus = GameStatus()
+//    @ObservedObject var vm: StatusManager = StatusManager()
     
     var body: some View {
         NavigationStack {
@@ -27,7 +27,7 @@ struct HomeView: View {
                     NavigationLink(destination: RegrasView()) {
                         Image("btnRegras")
                     } .padding()
-                    NavigationLink(destination: EstatisticasView(), label: {
+                    NavigationLink(destination: StatusView(), label: {
                         Image("btnEstatisticas")
                     })
                     .padding()
@@ -42,7 +42,7 @@ struct HomeView: View {
             controllerAPI.getNewDeck { deck in
                 if !deck.success {
                     print("request not succeded")
-                    vm.testGameStatus()
+                    
                 }
             }
         }
