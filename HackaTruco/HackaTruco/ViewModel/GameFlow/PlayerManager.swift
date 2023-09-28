@@ -30,6 +30,8 @@ class PlayerManager {
         return cardsUrl
     }
     
+    //MARK: - Funções do BOT
+    
     /** Função para pegar o peso mais forte ou mais fraco das cartas em mãos*/
     func getCodeCard(cards: [CardModel], getStrong: Bool) -> Card? {
         
@@ -76,7 +78,7 @@ class PlayerManager {
         }
     }
     
-    
+    /**Função para calcular se o bot tem cartas boas para pedir truco**/
     func isWeightAverageGreaterOrEqual18(cards: [CardModel]) -> Bool {
         guard !cards.isEmpty else {
             return false
@@ -84,15 +86,44 @@ class PlayerManager {
         
         // Inicializa uma variável para armazenar a soma dos pesos
         var totalWeight = 0
-
+        
         for card in cards {
             if let value = CardsValue(rawValue: card.value) {
                 // Adiciona o peso de cada CardModel à soma total
                 totalWeight += value.weight
             }
         }
-
-        // Verifica se o total é maior ou igual a 17
-        return totalWeight >= 17
+        
+        if cards.count == 3 {
+            // Verifica se o total é maior ou igual a 17
+            return totalWeight >= 17
+        } else if cards.count == 2 {
+            return totalWeight >= 13
+        } else {
+            return totalWeight >= 8
+        }
+    }
+    
+    func doubleTruco(cards: [CardModel], manilha: Card) -> Bool {
+        guard !cards.isEmpty else {
+            return false
+        }
+        print("CARDS")
+        dump(cards)
+        print("MANILHA")
+        dump(manilha)
+        // Verificar se há uma carta com o valor "3"
+        let hasValue3 = cards.contains { $0.value == "3" }
+        
+        // Verificar se algum CardModel tem weight igual ou maior ao da manilha
+        let hasManilha = cards.contains { cardModel in
+            if let cardValue = CardsValue(rawValue: cardModel.value) {
+                return cardValue.weight == manilha.weight
+            }
+            return false
+        }
+        print("DOBRA?")
+        print(hasValue3 || hasManilha)
+        return hasValue3 || hasManilha
     }
 }

@@ -48,6 +48,9 @@ struct GameView: View {
             
             controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 1) { card in
                 shackle = card.cards[0]
+                dump(card.cards[0])
+                dump(shackle)
+                PlayerManager.sharedBot.doubleTruco(cards: player1.handCards, manilha: TableManager.identifyManilha(card: shackle!))
             }
             
         }

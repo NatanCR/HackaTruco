@@ -9,13 +9,10 @@ import Foundation
 
 class TableManager {
     
-    public static func identifyManilha(card: CardModel) -> [Card] {
+    public static func identifyManilha(card: CardModel) -> Card {
         let manilhaValue = CardsValue.init(rawValue: card.value)!.weight + 1
-        return [Card(code: card.code, weight: manilhaValue, suit: card.suit)]
+        return Card(code: card.code, weight: manilhaValue, suit: card.suit)
     }
-    
-    
-    
     
     /**Função que recebe os jogadores e a manilha, calcula quem venceu a rodada e devolve o vencedor, se empatar retorna nil**/
     public static func compareCardsOnTable(player1: PlayerModel, player2: PlayerModel, manilha: TableModel) -> PlayerModel? {
