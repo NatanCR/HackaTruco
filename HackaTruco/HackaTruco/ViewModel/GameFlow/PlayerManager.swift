@@ -9,6 +9,12 @@ import Foundation
 
 class PlayerManager {
     
+    static let sharedBot: PlayerManager = .init()
+    
+    private init(){
+    
+    }
+    
     /**
      * Recebe um model de um player e retorna um vetor com os links das imagens das cartas que tem em sua respectiva mao
      */
@@ -24,7 +30,25 @@ class PlayerManager {
         return cardsUrl
     }
     
-    //Funções do bot
-    
-    
+    /** Função para primeira jogada do bot (jogando maior carta da mão)*/
+    func getStrongCard(cards: [CardModel]) -> CardModel? {
+        
+        guard !cards.isEmpty else {
+            return nil
+        }
+
+        var cardWeights: [Int] = []
+
+        for card in cards {
+            if let value = CardsValue(rawValue: card.value ) {
+                cardWeights.append(value.weight)
+            }
+        }
+
+        var maxWeight = cardWeights.max()
+        var minWeight = cardWeights.min()
+
+        return nil
+    }
+
 }

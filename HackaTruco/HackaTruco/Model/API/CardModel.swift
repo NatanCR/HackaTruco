@@ -59,7 +59,8 @@ public struct CardImages : Codable, Hashable {
     var png: String
 }
 
-public struct CardModel : Codable, Hashable {
+public struct CardModel : Codable, Hashable{
+
     var code: String
     var image: String
     var images: CardImages

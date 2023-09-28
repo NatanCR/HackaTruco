@@ -39,6 +39,8 @@ struct GameView: View {
             print("ON APPEAR")
             controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
                 player1.handCards = card.cards
+                
+                PlayerManager.sharedBot.getStrongCard(cards: card.cards)
             }
             controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
                 player2.handCards = card.cards
