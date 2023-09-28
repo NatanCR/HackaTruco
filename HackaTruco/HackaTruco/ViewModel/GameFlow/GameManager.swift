@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-
+@MainActor
 final class GameManager: ObservableObject {
     
     // MARK: Singleton
@@ -40,18 +40,23 @@ final class GameManager: ObservableObject {
         self.round = 0
     }
     
-    func newGame(controllerAPI: ApiRequest) {
+    func newGame(_ controllerAPI: ApiRequest) {
         controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 7) { deck in
             self.player.handCards = [deck.cards[3], deck.cards[2], deck.cards[0]]
             self.computer.handCards = [deck.cards[4], deck.cards[5], deck.cards[6]]
             self.schale = deck.cards[1]
             dump(self.player)
-            
         }
     }
     
     func addCurrentCard(_ index: Int, card: CardModel){
-//        imageCard.currentCard = card
-//        imageCard.handCards.remove(at: index)
+        self.player.currentCard = card
+        self.player.handCards.remove(at: index)
+    }
+    
+    func clearTable() async {
+        try? await Task.sleep(until: .now.advanced(by: .seconds(3)))
+        self.player.currentCard = nil
+        self.computer.currentCard = nil
     }
 }

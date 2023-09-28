@@ -14,7 +14,7 @@ struct PlayerModel: Hashable {
     var finalScore: Int
     var handCards: [CardModel]
     var currentCard: CardModel?
-    var turn: Bool = false
+    var turn: Bool = true
     
     init(id: UUID = UUID(), name: String, roundScore: Int, finalScore: Int, handCards: [CardModel], currentCard: CardModel?) {
         self.id = id
