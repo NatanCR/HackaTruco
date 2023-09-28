@@ -21,6 +21,7 @@ final class GameManager: ObservableObject {
     @Published var table: TableModel?
     @Published var schale: CardModel?
     @Published var round: Int = 0
+    @Published var truco: Bool = false
     
     private init() {
         
