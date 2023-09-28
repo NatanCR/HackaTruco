@@ -76,4 +76,23 @@ class PlayerManager {
         }
     }
     
+    
+    func isWeightAverageGreaterOrEqual18(cards: [CardModel]) -> Bool {
+        guard !cards.isEmpty else {
+            return false
+        }
+        
+        // Inicializa uma variável para armazenar a soma dos pesos
+        var totalWeight = 0
+
+        for card in cards {
+            if let value = CardsValue(rawValue: card.value) {
+                // Adiciona o peso de cada CardModel à soma total
+                totalWeight += value.weight
+            }
+        }
+
+        // Verifica se o total é maior ou igual a 17
+        return totalWeight >= 17
+    }
 }

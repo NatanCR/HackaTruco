@@ -39,7 +39,7 @@ struct GameView: View {
             print("ON APPEAR")
             controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
                 player1.handCards = card.cards
-                
+                PlayerManager.sharedBot.isWeightAverageGreaterOrEqual18(cards: card.cards)
                 PlayerManager.sharedBot.getCardModel(cards: card.cards, getStrong: true)
             }
             controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
