@@ -9,12 +9,12 @@ import SwiftUI
 
 struct CardComponent: View{
     
-    private var imageCard: PlayerModel
+    @Binding private var imageCard: PlayerModel
     private var isPlayer: Bool
     private var turn: Bool
     
-    init(imageCard: PlayerModel, isPlayer: Bool, turn: Bool) {
-        self.imageCard = imageCard
+    init(imageCard: Binding<PlayerModel>, isPlayer: Bool, turn: Bool) {
+        self._imageCard = imageCard
         self.isPlayer = isPlayer
         self.turn = turn
     }
@@ -35,8 +35,9 @@ struct CardComponent: View{
     }
     
     private func addCurrentCard(_ index: Int, card: CardModel){
-//        imageCard.currentCard = card
-//        imageCard.handCards.remove(at: index)
+        imageCard.currentCard = card
+        imageCard.handCards.remove(at: index)
+        imageCard.turn = true
     }
     
     
