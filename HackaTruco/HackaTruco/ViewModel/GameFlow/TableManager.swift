@@ -11,7 +11,7 @@ class TableManager {
     
     public static func identifyManilha(card: CardModel) -> [Card] {
         let manilhaValue = CardsValue.init(rawValue: card.value)!.weight + 1
-        return [Card(value: manilhaValue, suit: card.suit)]
+        return [Card(code: card.code, weight: manilhaValue, suit: card.suit)]
     }
     
     

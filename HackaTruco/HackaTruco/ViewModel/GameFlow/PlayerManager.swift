@@ -12,7 +12,7 @@ class PlayerManager {
     static let sharedBot: PlayerManager = .init()
     
     private init(){
-    
+        
     }
     
     /**
@@ -31,24 +31,49 @@ class PlayerManager {
     }
     
     /** Função para primeira jogada do bot (jogando maior carta da mão)*/
-    func getStrongCard(cards: [CardModel]) -> CardModel? {
+    func getCodeCard(cards: [CardModel], getStrong: Bool) -> Card? {
         
         guard !cards.isEmpty else {
             return nil
         }
-
-        var cardWeights: [Int] = []
-
+        
+        var cardWeights: [Card] = []
+        
         for card in cards {
             if let value = CardsValue(rawValue: card.value ) {
-                cardWeights.append(value.weight)
+                cardWeights.append(Card(code: card.code, weight: value.weight, suit: card.suit))
             }
         }
-
-        var maxWeight = cardWeights.max()
-        var minWeight = cardWeights.min()
-
-        return nil
+        
+        // Encontrar o Card com o maior weight
+        let maxWeightCard = cardWeights.max(by: { $0.weight < $1.weight })
+        
+        // Encontrar o Card com o menor weight
+        let minWeightCard = cardWeights.min(by: { $0.weight < $1.weight })
+        
+        if getStrong {
+            return maxWeightCard
+        } else {
+            return minWeightCard
+        }
     }
-
+    
+    func getCardModel(cards: [CardModel], getStrong: Bool) -> CardModel? {
+        guard !cards.isEmpty else {
+            return nil
+        }
+        
+        guard let codeCard = getCodeCard(cards: cards, getStrong: getStrong) else {
+            return nil
+        }
+        
+        // Encontre o CardModel com o mesmo código (code) que o strongCard
+        if let matchingCardModel = cards.first(where: { $0.code == codeCard.code }) {
+            dump(matchingCardModel)
+            return matchingCardModel
+        } else {
+            return nil
+        }
+    }
+    
 }

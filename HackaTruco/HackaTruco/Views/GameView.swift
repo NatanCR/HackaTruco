@@ -40,7 +40,7 @@ struct GameView: View {
             controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
                 player1.handCards = card.cards
                 
-                PlayerManager.sharedBot.getStrongCard(cards: card.cards)
+                PlayerManager.sharedBot.getCardModel(cards: card.cards, getStrong: true)
             }
             controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 3) { card in
                 player2.handCards = card.cards
