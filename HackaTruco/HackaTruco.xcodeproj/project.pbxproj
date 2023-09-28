@@ -116,7 +116,6 @@
 		D1A9D6F42AC1AE7E00A13B0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D45EE8032AC3DC0C00C3D4AD /* GameStatus.swift */,
 				D1A9D7062AC2FF3100A13B0D /* API */,
 				D1A9D7042AC2FD3D00A13B0D /* PlayerModel.swift */,
 			);
@@ -127,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				D1A9D7032AC1C2D600A13B0D /* GameFlow */,
+				D45EE8032AC3DC0C00C3D4AD /* GameStatus.swift */,
 				D1A9D6FE2AC1B21800A13B0D /* ApiRequest.swift */,
 			);
 			path = ViewModel;

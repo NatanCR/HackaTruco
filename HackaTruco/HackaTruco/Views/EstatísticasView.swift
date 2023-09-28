@@ -14,20 +14,30 @@ struct EstatisticasView: View {
     var body: some View {
         
         VStack {
-            RetanguloComponente(imgName: "flag.2.crossed.fill", description: "Partidas iniciadas", num: status.matchesStarted)
-            RetanguloComponente(imgName: "trophy.fill", description: "   Vitórias        ", num: status.matchesWon)
-            RetanguloComponente(imgName: "xmark", description: "        Derrotas             ", num: status.defeats)
+            RetanguloComponente(imgName: "flag.2.crossed.fill", description: "Partidas iniciadas", num: status.matches)
+            RetanguloComponente(imgName: "trophy.fill", description: "Vitórias", num: status.wins)
+            RetanguloComponente(imgName: "xmark", description: "Derrotas", num: status.defeats)
             RetanguloComponente(imgName: "medal.fill", description: "Sequência vitórias", num: status.winSequence)
             Spacer()
-        }.navigationBarTitle("Estatísticas", displayMode: .inline)
+        }.navigationBarTitle("", displayMode: .inline)
             .toolbarBackground(Color("bgHomeColor"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Estatísticas")
+                        .foregroundColor(.white)
+                }
+            }
         
             .onAppear {
-                status.testGameStatus()
-        }
+                status.zerarVariaveis()
+                //                status.winMatch()
+                //                status.loseMatch()
+                //                status.winMatch()
+                //                status.winMatch()
+            }
     }
-       
+    
 }
 
 struct EstatisticasView_Previews: PreviewProvider {
