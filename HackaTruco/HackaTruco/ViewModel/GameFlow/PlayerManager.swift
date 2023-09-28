@@ -30,7 +30,7 @@ class PlayerManager {
         return cardsUrl
     }
     
-    /** Função para primeira jogada do bot (jogando maior carta da mão)*/
+    /** Função para pegar o peso mais forte ou mais fraco das cartas em mãos*/
     func getCodeCard(cards: [CardModel], getStrong: Bool) -> Card? {
         
         guard !cards.isEmpty else {
@@ -58,6 +58,7 @@ class PlayerManager {
         }
     }
     
+    /**Função para pegar a carta inteira com base no peso escolhido pela func getCodeCard**/
     func getCardModel(cards: [CardModel], getStrong: Bool) -> CardModel? {
         guard !cards.isEmpty else {
             return nil
@@ -67,9 +68,8 @@ class PlayerManager {
             return nil
         }
         
-        // Encontre o CardModel com o mesmo código (code) que o strongCard
+        // Encontre o CardModel com o mesmo código (code) que o codeCard
         if let matchingCardModel = cards.first(where: { $0.code == codeCard.code }) {
-            dump(matchingCardModel)
             return matchingCardModel
         } else {
             return nil
