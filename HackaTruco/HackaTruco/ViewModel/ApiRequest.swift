@@ -13,41 +13,41 @@ class ApiRequest: ObservableObject {
     
     /**Faz a chamada da API com as cartas necessárias **/
     func getNewDeck(completion: @escaping (ShuffleModel) -> Void) {
-            guard let url = URL(string: "https://www.deckofcardsapi.com/api/deck/new/shuffle/?cards=AS,AD,AC,AH,2S,2D,2C,2H,3S,3D,3C,3H,KS,KD,KC,KH,JS,JD,JC,JH,QS,QD,QC,QH,7S,7D,7C,7H,6S,6D,6C,6H,5S,5D,5C,5H,4S,4D,4C,4H") else {return}
-            
+        guard let url = URL(string: "https://www.deckofcardsapi.com/api/deck/new/shuffle/?cards=AS,AD,AC,AH,2S,2D,2C,2H,3S,3D,3C,3H,KS,KD,KC,KH,JS,JD,JC,JH,QS,QD,QC,QH,7S,7D,7C,7H,6S,6D,6C,6H,5S,5D,5C,5H,4S,4D,4C,4H") else {return}
+        
         callJsonApi(url: url, object: ShuffleModel.self) { deckModel in
-                self.reshuffle = deckModel
-                completion(self.reshuffle ?? ShuffleModel(success: false, deck_id: "bad", shuffled: false, remaining: 0))
-            }
+            self.reshuffle = deckModel
+            completion(self.reshuffle ?? ShuffleModel(success: false, deck_id: "bad", shuffled: false, remaining: 0))
         }
+    }
     
-        /**
-         * Faz a chamada API que reembaralha um deck já existente (deve passar o id do deck) 
-         */
-        func getReshuffle(deckId: String, completion: @escaping (ShuffleModel) -> ()) {
-            guard let url = URL(string: "https://deckofcardsapi.com/api/deck/\(deckId)/shuffle/") else {
-                print("NAO DEU CERTO")
-                return
-            }
-            
-            callJsonApi(url: url, object: ShuffleModel.self) { deckModel in
-                self.reshuffle = deckModel as ShuffleModel
-                completion(self.reshuffle ?? ShuffleModel(success: false, deck_id: "", shuffled: false, remaining: 0))
-            }
+    /**
+     * Faz a chamada API que reembaralha um deck já existente (deve passar o id do deck)
+     */
+    func getReshuffle(deckId: String, completion: @escaping (ShuffleModel) -> ()) {
+        guard let url = URL(string: "https://deckofcardsapi.com/api/deck/\(deckId)/shuffle/") else {
+            print("NAO DEU CERTO")
+            return
         }
-    
-    
-        /**
-         * Faz a chamada API para puxar uma quantidade de cartas de um deck. Deve passar o id do deck e a quantidade de cartas a ser puxada
-         */
-        func drawCard(deckId: String, drawCount: Int, completion: @escaping (DrawModel) -> Void) {
-            guard let url = URL(string: "https://deckofcardsapi.com/api/deck/\(deckId)/draw/?count=\(drawCount)") else {return}
-            
-            callJsonApi(url: url, object: DrawModel.self) { deckModel in
-                self.draw = deckModel
-                completion(self.draw ?? DrawModel(success: false, deck_id: "", cards: [], remaining: 0))
-            }
+        
+        callJsonApi(url: url, object: ShuffleModel.self) { deckModel in
+            self.reshuffle = deckModel as ShuffleModel
+            completion(self.reshuffle ?? ShuffleModel(success: false, deck_id: "", shuffled: false, remaining: 0))
         }
+    }
+    
+    
+    /**
+     * Faz a chamada API para puxar uma quantidade de cartas de um deck. Deve passar o id do deck e a quantidade de cartas a ser puxada
+     */
+    func drawCard(deckId: String, drawCount: Int, completion: @escaping (DrawModel) -> Void) {
+        guard let url = URL(string: "https://deckofcardsapi.com/api/deck/\(deckId)/draw/?count=\(drawCount)") else {return}
+        
+        callJsonApi(url: url, object: DrawModel.self) { deckModel in
+            self.draw = deckModel
+            completion(self.draw ?? DrawModel(success: false, deck_id: "", cards: [], remaining: 0))
+        }
+    }
     
     
     /**

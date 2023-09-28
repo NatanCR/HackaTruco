@@ -50,8 +50,8 @@ struct ScoreView: View{
     }
 }
 
-struct ContentView_Previews_ScoreView: PreviewProvider {
-    static var previews: some View {
-        ScoreView(scorePlayer: 1, scoreCPU: 12, round: 12)
-    }
-}
+//struct ContentView_Previews_ScoreView: PreviewProvider {
+//    static var previews: some View {
+//        ScoreView(scorePlayer: 1, scoreCPU: 12, round: 12)
+//    }
+//}
