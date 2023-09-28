@@ -15,6 +15,11 @@ class PlayerManager {
         
     }
     
+    public func playRandomCard(handCards: [CardModel]) async -> CardModel? {
+        try? await Task.sleep(until: .now.advanced(by: .seconds(2)))
+        return handCards.randomElement()
+    }
+    
     /**
      * Recebe um model de um player e retorna um vetor com os links das imagens das cartas que tem em sua respectiva mao
      */
@@ -61,12 +66,14 @@ class PlayerManager {
     }
     
     /**Função para pegar a carta inteira com base no peso escolhido pela func getCodeCard**/
-    func getCardModel(cards: [CardModel], getStrong: Bool) -> CardModel? {
+    func getCardModel(cards: [CardModel]) async -> CardModel? {
+        try? await Task.sleep(until: .now.advanced(by: .seconds(2)))
+
         guard !cards.isEmpty else {
             return nil
         }
         
-        guard let codeCard = getCodeCard(cards: cards, getStrong: getStrong) else {
+        guard let codeCard = getCodeCard(cards: cards, getStrong: Bool.random()) else {
             return nil
         }
         
