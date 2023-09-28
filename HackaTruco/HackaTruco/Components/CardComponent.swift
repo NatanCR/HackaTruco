@@ -11,10 +11,12 @@ struct CardComponent: View{
     
     @Binding private var imageCard: PlayerModel
     private var isPlayer: Bool
+    private var turn: Bool
     
-    init(imageCard: Binding<PlayerModel>, isPlayer: Bool) {
+    init(imageCard: Binding<PlayerModel>, isPlayer: Bool, turn: Bool) {
         self._imageCard = imageCard
         self.isPlayer = isPlayer
+        self.turn = turn
     }
     
     var body: some View {
@@ -35,6 +37,7 @@ struct CardComponent: View{
     private func addCurrentCard(_ index: Int, card: CardModel){
         imageCard.currentCard = card
         imageCard.handCards.remove(at: index)
+        imageCard.turn = true
     }
     
     
