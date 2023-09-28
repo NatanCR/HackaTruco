@@ -61,12 +61,12 @@ class PlayerManager {
     }
     
     /**Função para pegar a carta inteira com base no peso escolhido pela func getCodeCard**/
-    func getCardModel(cards: [CardModel], getStrong: Bool) -> CardModel? {
+    func getCardModel(cards: [CardModel]) -> CardModel? {
         guard !cards.isEmpty else {
             return nil
         }
         
-        guard let codeCard = getCodeCard(cards: cards, getStrong: getStrong) else {
+        guard let codeCard = getCodeCard(cards: cards, getStrong: Bool.random()) else {
             return nil
         }
         
