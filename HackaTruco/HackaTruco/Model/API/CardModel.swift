@@ -59,7 +59,8 @@ public struct CardImages : Codable, Hashable {
     var png: String
 }
 
-public struct CardModel : Codable, Hashable {
+public struct CardModel : Codable, Hashable{
+
     var code: String
     var image: String
     var images: CardImages
@@ -68,6 +69,7 @@ public struct CardModel : Codable, Hashable {
 }
 
 public struct Card {
-    var value: Int //numero ou letra
+    var code: String 
+    var weight: Int //numero ou letra
     var suit: String //naipe
 }
