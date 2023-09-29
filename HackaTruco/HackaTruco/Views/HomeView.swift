@@ -1,4 +1,3 @@
-//
 //  HomeView.swift
 //  HackaTruco
 //
@@ -8,42 +7,45 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var controllerAPI = ApiRequest()
+    @ObservedObject var vm: GameStatus = GameStatus()
+    
     var body: some View {
-        ZStack {
-            Color("bgHomeColor").ignoresSafeArea()
-            Image("bgHome")
-                .resizable()
-                .frame(height: 1000)
-            VStack{
-                Text("HackaTruco")
-                    .foregroundColor(.white)
-                    .font(.system(size: 45, weight: .medium, design: .monospaced))
+        NavigationStack {
+            ZStack {
+                Color("bgHomeColor").ignoresSafeArea()
+                Image("bgHome")
+                    .resizable()
+                    .frame(height: 1000)
+                VStack{
+                    Text("HackaTruco")
+                        .foregroundColor(.white)
+                        .font(.system(size: 45, weight: .medium, design: .monospaced))
+                        .padding()
+                    NavigationLink(destination: GameView(controllerAPI: controllerAPI), label: {Image("btnJogar")})
+                        .padding()
+                    NavigationLink(destination: RegrasView()) {
+                        Image("btnRegras")
+                    } .padding()
+                    NavigationLink(destination: EstatisticasView(), label: {
+                        Image("btnEstatisticas")
+                    })
                     .padding()
-                Button {
-                    //func
-                } label: {
-                    Image("btnJogar")
                 }
-                .padding()
-                Button {
-                    //func
-                } label: {
-                    Image("btnRegras")
+                
+            }
+            
+        }
+        
+        .onAppear {
+            print("ON APPEAR")
+            controllerAPI.getNewDeck { deck in
+                if !deck.success {
+                    print("request not succeded")
+                    vm.testGameStatus()
                 }
-                .padding()
-                Button {
-                    //func
-                } label: {
-                    Image("btnEstatisticas")
-                }
-                .padding()
             }
         }
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
+        .accentColor(.white)
     }
 }

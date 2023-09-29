@@ -9,7 +9,7 @@ import Foundation
 
 //pra usar o baralho existente e trazer ele embaralhado
 public struct ShuffleModel : DeckOfCards {
-    var sucess: Bool
+    var success: Bool
     var deck_id: String
     var shuffled: Bool
     var remaining: Int
