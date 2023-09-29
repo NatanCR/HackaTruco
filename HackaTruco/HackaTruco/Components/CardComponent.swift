@@ -13,11 +13,13 @@ struct CardComponent: View{
     private var isPlayer: Bool
     private var turn: Bool
     @StateObject private var gameManager = GameManager.shared
+    @ObservedObject var controllerAPI: ApiRequest
 
-    init(imageCard: PlayerModel, isPlayer: Bool, turn: Bool) {
+    init(imageCard: PlayerModel, isPlayer: Bool, turn: Bool, Api: ApiRequest) {
         self.imageCard = imageCard
         self.isPlayer = isPlayer
         self.turn = turn
+        self.controllerAPI = Api
     }
     
     var body: some View {
@@ -32,12 +34,23 @@ struct CardComponent: View{
                     Task {
                         while !gameManager.player.turn {
                             await gameManager.computer.currentCard = PlayerManager.sharedBot.playRandomCard(handCards: gameManager.computer.handCards)
-                            gameManager.computer.handCards.removeAll {$0.code == gameManager.computer.currentCard?.code}
-                            await gameManager.clearTable()
-//                            TableManager.compareCardsOnTable(player1: &gameManager.player, player2: &gameManager.computer, shackle: gameManager.schale)
-                            gameManager.player.turn = true
+                            
+                            DispatchQueue.main.async {
+                                gameManager.computer.handCards.removeAll {$0.code == gameManager.computer.currentCard?.code}
+                            }
+                            
+                            if gameManager.player.currentCard == nil {
+                                gameManager.player.turn = true
+                                continue
+                            }
+                            
+                            await self.gameManager.calculateRound()
+                            
+                            if self.gameManager.matchDidEnd {
+                                self.gameManager.player.turn = true
+                                self.gameManager.newGame(self.controllerAPI)
+                            }
                         }
-                        
                     }
                     
                 }, label: {
