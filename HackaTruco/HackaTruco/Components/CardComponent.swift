@@ -43,14 +43,22 @@ struct CardComponent: View{
 //                                self.acceptTruco = true
 //                                self.recusedTruco = true
                             }
+                            DispatchQueue.main.async {
+                                gameManager.computer.handCards.removeAll {$0.code == gameManager.computer.currentCard?.code}
+                            }
                             
-                            gameManager.computer.handCards.removeAll {$0.code == gameManager.computer.currentCard?.code}
+                            if gameManager.player.currentCard == nil {
+                                gameManager.player.turn = true
+                                continue
+                            }
                             
-                            await gameManager.clearTable()
-                            //                            TableManager.compareCardsOnTable(player1: &gameManager.player, player2: &gameManager.computer, shackle: gameManager.schale)
-                            gameManager.player.turn = true
+                            await self.gameManager.calculateRound()
+                            
+                            if self.gameManager.matchDidEnd {
+                                self.gameManager.player.turn = true
+                                self.gameManager.newGame(self.controllerAPI)
+                            }
                         }
-                        
                     }
                     
                 }, label: {

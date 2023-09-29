@@ -9,20 +9,22 @@ struct GameView: View {
 
     var body: some View{
         VStack(content: {
-            ScoreView(scorePlayer: 0, scoreCPU: 0, round: 0)
+            ScoreView(scorePlayer: 10, scoreCPU: 12, round: 2, gameManager: gameManager)
             CardComponent(imageCard: gameManager.computer, isPlayer: false, turn: gameManager.player.turn, acceptTruco: $trucoAccepted, recusedTruco: $trucoRecused)
-            
+           
             Spacer()
             
             HStack(spacing: -50){
                 Spacer()
                 ImageCardComponent(url: gameManager.player.currentCard?.image ?? String()).padding(.trailing, 70)
-                ImageCardComponent(url: gameManager.schale?.image ?? String())
+                ImageCardComponent(url: gameManager.shackle?.image ?? String())
                 Image(uiImage: UIImage(named: "card") ?? .strokedCheckmark).resizable().frame(maxWidth: 72,maxHeight: 100)
                 ImageCardComponent(url: gameManager.computer.currentCard?.image ?? String()).padding(.leading, 70)
                 Spacer()
             }
+          
             Spacer()
+          
             ZStack{
                 CardComponent(imageCard: gameManager.player, isPlayer: true, turn: gameManager.computer.turn, acceptTruco: $trucoAccepted, recusedTruco: $trucoRecused)
                     .disabled(!gameManager.player.turn)

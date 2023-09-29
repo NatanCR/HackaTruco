@@ -11,21 +11,23 @@ struct ScoreView: View{
     private var scorePlayer: Int
     private var scoreCPU: Int
     private var round: Int
-    init(scorePlayer: Int, scoreCPU: Int, round: Int) {
+    @ObservedObject var gm: GameManager
+    init(scorePlayer: Int, scoreCPU: Int, round: Int, gameManager: GameManager) {
         self.scorePlayer = scorePlayer
         self.scoreCPU = scoreCPU
         self.round = round
+        self.gm = gameManager
     }
     
     var body: some View{
         HStack(content: {
-            Text("Jogador: \(scorePlayer)")
+            Text("Jogador: \(gm.player.roundScore)")
                 .frame(width: 90)
                 .font(.system(size: 16))
                 .fontWeight(.semibold)
                 .padding(.leading, 40)
             VStack{
-                Text(String(round))
+                Text(String(gm.player.finalScore))
                     .font(.system(size: 48))
                     .fontWeight(.semibold)
                     .padding(.top, 5)
@@ -35,7 +37,7 @@ struct ScoreView: View{
                 Spacer()
             }.padding(.leading, 30)
             Spacer()
-            Text("CPU: \(scoreCPU)")
+            Text("CPU: \(gm.computer.roundScore)")
                 .frame(width: 90)
                 .font(.system(size: 16))
                 .fontWeight(.semibold)
