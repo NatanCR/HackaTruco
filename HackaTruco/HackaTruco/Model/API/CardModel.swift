@@ -60,7 +60,6 @@ public struct CardImages : Codable, Hashable {
 }
 
 public struct CardModel : Codable, Hashable{
-
     var code: String
     var image: String
     var images: CardImages

@@ -35,4 +35,14 @@ struct PlayerModel: Hashable {
         self.handCards = []
         self.currentCard = nil
     }
+    
+    mutating func reset() {
+        if self.roundScore >= 2 {
+            self.finalScore += 1
+        }
+        
+        self.roundScore = 0
+        self.handCards.removeAll()
+        self.currentCard = nil
+    }
 }

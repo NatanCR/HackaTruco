@@ -8,7 +8,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var controllerAPI = ApiRequest()
-    
+    @ObservedObject var vm: GameStatus = GameStatus()
     
     var body: some View {
         NavigationStack {
@@ -39,12 +39,10 @@ struct HomeView: View {
         
         .onAppear {
             print("ON APPEAR")
-            
-            
             controllerAPI.getNewDeck { deck in
                 if !deck.success {
                     print("request not succeded")
-                    
+                    vm.testGameStatus()
                 }
             }
         }

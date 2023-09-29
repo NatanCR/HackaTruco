@@ -15,28 +15,26 @@ final class GameManager: ObservableObject {
     static var shared: GameManager = GameManager()
     
     // MARK: Game Objects
-    
     @Published var player: PlayerModel = PlayerModel()
     @Published var computer: PlayerModel = PlayerModel()
     @Published var table: TableModel?
-    @Published var schale: CardModel?
+    @Published var shackle: CardModel?
     @Published var round: Int = 0
     
+    var matchDidEnd: Bool = false
+    
+    private let tableManager: TableManager = TableManager()
+    
     private init() {
-        
+        self.player.name = "Malucão do Kinderovo"
+        self.computer.name = "Máquina"
     }
     
     func resetGame() {
         self.player = PlayerModel()
-        self.player.name = "Malucão do Kinderovo"
-        
         self.computer = PlayerModel()
-        self.computer.name = "Máquina"
-        
         self.table = nil
-        
-        self.schale = nil
-        
+        self.shackle = nil
         self.round = 0
     }
     
@@ -44,7 +42,8 @@ final class GameManager: ObservableObject {
         controllerAPI.drawCard(deckId: controllerAPI.reshuffle?.deck_id ?? "", drawCount: 7) { deck in
             self.player.handCards = [deck.cards[3], deck.cards[2], deck.cards[0]]
             self.computer.handCards = [deck.cards[4], deck.cards[5], deck.cards[6]]
-            self.schale = deck.cards[1]
+            self.shackle = deck.cards[1]
+            self.matchDidEnd = false
             dump(self.player)
         }
     }
@@ -58,5 +57,27 @@ final class GameManager: ObservableObject {
         try? await Task.sleep(until: .now.advanced(by: .seconds(3)))
         self.player.currentCard = nil
         self.computer.currentCard = nil
+    }
+    
+    func calculateRound() async {
+        let winner = await self.tableManager.compareCardsOnTable(gm: self)
+        
+        if winner?.name == player.name {
+            self.player.roundScore += 1
+        } else {
+            self.computer.roundScore += 1
+        }
+        
+        if self.player.roundScore == 2 || self.computer.roundScore == 2 {
+            endMatch()
+        }
+        
+        await self.clearTable()
+    }
+    
+    func endMatch() {
+        self.player.reset()
+        self.computer.reset()
+        self.matchDidEnd = true
     }
 }
