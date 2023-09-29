@@ -8,17 +8,19 @@
 import Foundation
 
 class GameStatus: ObservableObject {
-    //salvando no userdefaults
     
-    @Published var matchesStarted: Int {
+    var sequence: [Bool] = []
+    
+    //salvando no userdefaults
+    @Published var matches: Int {
         didSet {
-            UserDefaults.standard.set(matchesStarted, forKey: "partidasIniciadas")
+            UserDefaults.standard.set(matches, forKey: "partidasIniciadas")
         }
     }
     
-    @Published var matchesWon: Int {
+    @Published var wins: Int {
         didSet {
-            UserDefaults.standard.set(matchesWon, forKey: "partidasGanhas")
+            UserDefaults.standard.set(wins, forKey: "partidasGanhas")
         }
     }
     
@@ -34,22 +36,56 @@ class GameStatus: ObservableObject {
         }
     }
     init() {
-        self.matchesStarted = UserDefaults.standard.integer(forKey: "partidasIniciadas")
-        self.matchesWon = UserDefaults.standard.integer(forKey: "partidasGanhas")
+        self.matches = UserDefaults.standard.integer(forKey: "partidasIniciadas")
+        self.wins = UserDefaults.standard.integer(forKey: "partidasGanhas")
         self.defeats = UserDefaults.standard.integer(forKey: "derrotas")
         self.winSequence = UserDefaults.standard.integer(forKey: "sequenciasGanhas")
     }
     
-    //teste
-    func testGameStatus() {
+    func saveGameStatus() {
+        var currentSequence = 0
+        var longestSequence = 0
+        for value in sequence {
+            if value {
+                // Se o valor é true, incrementa a sequência atual
+                currentSequence += 1
+                // Atualiza a maior sequência
+                longestSequence = max(longestSequence, currentSequence)
+            } else {
+                // Se o valor é false, reseta a sequência atual
+                currentSequence = 0
+            }
+        }
+        winSequence = longestSequence
         
-        let status = GameStatus()
-        
-        status.matchesStarted += 1
-        status.defeats += 1
-        
-        print("Partidas iniciads: \(status.matchesStarted)")
     }
     
-
+    func startMatch() {
+        matches += 1
+        saveGameStatus()
+    }
+    
+    func winMatch() {
+        startMatch()
+        wins += 1
+        sequence.append(true)
+    }
+    
+    func loseMatch() {
+        startMatch()
+        defeats += 1
+        sequence.append(false)
+    }
+    
+    // para testes 
+    func zerarVariaveis() {
+        let status = GameStatus()
+        status.matches = 0
+        status.defeats = 0
+        status.winSequence = 0
+        status.wins = 0
+        saveGameStatus()
+        
+    }
+    
 }
