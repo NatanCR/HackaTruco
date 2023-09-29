@@ -335,11 +335,12 @@
 			};
 			buildConfigurationList = D1F1D8EE2ABDD7D7002ED8E3 /* Build configuration list for PBXProject "HackaTruco" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = D1F1D8EA2ABDD7D7002ED8E3;
 			productRefGroup = D1F1D8F42ABDD7D7002ED8E3 /* Products */;
@@ -568,7 +569,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HackaTruco/Preview Content\"";
-				DEVELOPMENT_TEAM = MM9XM3Z7DH;
+				DEVELOPMENT_TEAM = 273QY7G77Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackaTruco/Info.plist;
@@ -597,7 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HackaTruco/Preview Content\"";
-				DEVELOPMENT_TEAM = MM9XM3Z7DH;
+				DEVELOPMENT_TEAM = 273QY7G77Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackaTruco/Info.plist;
