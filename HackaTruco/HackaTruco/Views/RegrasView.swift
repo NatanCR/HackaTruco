@@ -12,28 +12,22 @@ struct RegrasView: View {
     let navTitle = "Regras"
     
     var body: some View {
-        
-        ScrollView {
-            
-            VStack {
-                ForEach(Regras.shared.lista, id: \.self) { regra in
-                    RegrasComponente(titulo: regra.titulo, descricao: regra.descricao)
-                        .padding(7)
-                }
+    
+            ScrollView {
                 
-            }
-            .navigationBarTitle("", displayMode: .inline)
-            .toolbarBackground(Color("bgHomeColor"), for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text(navTitle)
-                        .foregroundColor(.white)
+                VStack {
+                    ForEach(Regras.shared.lista, id: \.self) { regra in
+                        RegrasComponente(titulo: regra.titulo, descricao: regra.descricao)
+                            .padding(7)
+                    }
+                    
                 }
+                .navigationBarTitle(navTitle, displayMode: .inline)
+                .toolbarBackground(Color("bgHomeColor"), for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .ignoresSafeArea()
+                .padding()
             }
-            .ignoresSafeArea()
-            .padding()
-        }
     }
 }
 

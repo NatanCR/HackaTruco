@@ -17,13 +17,13 @@ struct RegrasComponente: View {
             DisclosureGroup {
                 Text(descricao)
                     .font(.system(size: 18))
-                    .foregroundColor(.white)
+//                    .foregroundColor(.white)
                     .padding()
                 
             } label: {
                 Text(titulo).bold()
                     .font(.system(size: 20))
-                    .foregroundColor(.white)
+//                    .foregroundColor(.white)
                     .padding(.horizontal, 15)
             }
             .foregroundColor(.black)
@@ -31,20 +31,20 @@ struct RegrasComponente: View {
                 .padding(5)
                 .background {
                     RoundedRectangle(cornerRadius: 15)
-//                        .stroke(Color("red"), lineWidth: 2)
+                        .stroke(Color("red"), lineWidth: 2)
                         .foregroundColor(Color ("bgHomeColor"))
-                        .frame(minWidth: 350, minHeight: 50)
+                        .frame(minWidth: 380, minHeight: 50)
 
                 }
-                .accentColor(.white)
+                .accentColor(Color("red"))
                 
         }
     }
 }
 
 
-//struct RegrasComponente_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RegrasComponente(titulo: "Regra 1", descricao: "bla bla bla")
-//    }
-//}
+struct RegrasComponente_Previews: PreviewProvider {
+    static var previews: some View {
+        RegrasComponente(titulo: "Regra 1", descricao: "bla bla bla")
+    }
+}
