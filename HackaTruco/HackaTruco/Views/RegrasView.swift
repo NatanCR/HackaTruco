@@ -23,6 +23,7 @@ struct RegrasView: View {
                     
                 }
                 .navigationBarTitle(navTitle, displayMode: .inline)
+                .toolbarColorScheme(.dark, for: .navigationBar)
                 .toolbarBackground(Color("bgHomeColor"), for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .ignoresSafeArea()

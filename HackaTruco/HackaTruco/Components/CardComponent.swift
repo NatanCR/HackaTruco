@@ -15,13 +15,15 @@ struct CardComponent: View{
     @StateObject private var gameManager = GameManager.shared
     @Binding var acceptTruco: Bool
     @Binding var recusedTruco: Bool
+    @ObservedObject var controllerAPI: ApiRequest
 
-    init(imageCard: PlayerModel, isPlayer: Bool, turn: Bool, acceptTruco: Binding<Bool>, recusedTruco: Binding<Bool>) {
+    init(imageCard: PlayerModel, isPlayer: Bool, turn: Bool, acceptTruco: Binding<Bool>, recusedTruco: Binding<Bool>, controllerAPI: ApiRequest) {
         self.imageCard = imageCard
         self.isPlayer = isPlayer
         self.turn = turn
         self._acceptTruco = acceptTruco
         self._recusedTruco = recusedTruco
+        self.controllerAPI = controllerAPI
     }
     
     var body: some View {

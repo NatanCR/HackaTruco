@@ -10,7 +10,7 @@ struct GameView: View {
     var body: some View{
         VStack(content: {
             ScoreView(scorePlayer: 10, scoreCPU: 12, round: 2, gameManager: gameManager)
-            CardComponent(imageCard: gameManager.computer, isPlayer: false, turn: gameManager.player.turn, acceptTruco: $trucoAccepted, recusedTruco: $trucoRecused)
+            CardComponent(imageCard: gameManager.computer, isPlayer: false, turn: gameManager.player.turn, acceptTruco: $trucoAccepted, recusedTruco: $trucoRecused, controllerAPI: controllerAPI)
            
             Spacer()
             
@@ -26,7 +26,7 @@ struct GameView: View {
             Spacer()
           
             ZStack{
-                CardComponent(imageCard: gameManager.player, isPlayer: true, turn: gameManager.computer.turn, acceptTruco: $trucoAccepted, recusedTruco: $trucoRecused)
+                CardComponent(imageCard: gameManager.player, isPlayer: true, turn: gameManager.computer.turn, acceptTruco: $trucoAccepted, recusedTruco: $trucoRecused, controllerAPI: controllerAPI)
                     .disabled(!gameManager.player.turn)
                     
                 if trucoAccepted{

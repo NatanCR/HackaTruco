@@ -27,6 +27,7 @@ struct EstatisticasView: View {
         }.navigationBarTitle("Estatísticas", displayMode: .inline)
             .toolbarBackground(Color("bgHomeColor"), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
     }
 }
 
