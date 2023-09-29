@@ -15,7 +15,7 @@ class PlayerManager {
         
     }
     
-    public func playRandomCard(handCards: [CardModel]) async -> CardModel? {
+     func playRandomCard(handCards: [CardModel]) async -> CardModel? {
         try? await Task.sleep(until: .now.advanced(by: .seconds(2)))
         return handCards.randomElement()
     }
@@ -23,7 +23,7 @@ class PlayerManager {
     /**
      * Recebe um model de um player e retorna um vetor com os links das imagens das cartas que tem em sua respectiva mao
      */
-    public static func getPlayersCardImagesUrl(player: PlayerModel) -> [String] {
+    func getPlayersCardImagesUrl(player: PlayerModel) -> [String] {
         var cardsUrl: [String] = []
         
         if player.handCards.isEmpty { return [] }

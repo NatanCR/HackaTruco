@@ -20,6 +20,7 @@ final class GameManager: ObservableObject {
     @Published var table: TableModel?
     @Published var shackle: CardModel?
     @Published var round: Int = 0
+    @Published var truco: Bool = false
     
     var matchDidEnd: Bool = false
     
